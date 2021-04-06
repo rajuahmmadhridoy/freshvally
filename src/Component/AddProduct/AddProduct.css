@@ -1,0 +1,40 @@
+form {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 5px 10px 18px #888888;
+}
+
+
+
+input{
+    outline: 0;
+}
+input.in {
+    width: 400px;
+    height: 40px;
+    margin-right: 25px;
+    margin-bottom: 35px;
+    padding: 10px 15px;
+}
+
+/* form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 5px 10px 18px #888888;
+    height: 250px;
+    width: 1088px;
+    padding: 30px;
+} */
+
+.submitBtn {
+    background: #5DADE2;
+    color: #fff;
+    padding: 7px 40px;
+    border-radius: 5px;
+    border: 0;
+}

@@ -1,0 +1,19 @@
+.card {
+    height: 435px;
+}
+.cardImage {
+    height: 200px;
+}
+.cardImage img {
+    height: 100%;
+}
+.primary.card-title.h5 {
+    margin-bottom: 30px;
+}
+p.card-text {
+    margin-bottom: 31px;
+}
+
+.btn {
+    padding: 5px 73px;
+   }

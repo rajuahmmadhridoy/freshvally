@@ -1,0 +1,19 @@
+
+.logo {
+    padding-top: 12px;
+}
+.logo a {
+    color: #222;
+    font-weight: 600;
+    font-size: 25px;
+}
+.menu{
+    line-height: 50px;
+}
+.menu li{
+    list-style: none;
+}
+.menu li a{
+    color: #222;
+    font-weight: 600;
+}
