@@ -47,6 +47,9 @@ console.log(checkOut);
     return (
         <Container>
             <Row>
+                {
+                    checkOut.length === 0 && <p>Loading...</p>
+                }
                 <div className="col-md-12 tableContainer ">
                     <h1>Check out</h1>
                     <table>
