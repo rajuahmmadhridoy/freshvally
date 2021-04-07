@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import './ManageProduct.css'
 const ManageProduct = () => {
     const [product, setProduct] = useState([]);
    useEffect(()=>{
@@ -8,26 +9,40 @@ const ManageProduct = () => {
      .then(res => res.json())
      .then(data => setProduct(data))
    },[])
+  //  console.log('object', product[0]._id);
+  const deleteProduct = (id)=>{
+    fetch(`http://localhost:5050/deleteProduct/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log("deleted successfully", result);
+            })
+  }
     return (
                 
               <Container>
                    <Row>
-                   {
-                    product.map(product =>
-                      
-                      <table>
-                      <thead>
+                   <table>
+                   <thead>
                      <tr>
                          <th>name</th>
                          <th>weight</th>
                          <th>price</th>
+                         <th>Action</th>
                      </tr>
                      </thead>
+                   </table>
+                   {
+                    product.map(product =>
+                      
+                      <table className="manageTable">
                         <tbody>
                          <tr>
                          <td>{product.name}</td>
                           <td>{product.weight}</td>
                           <td>{product.price}</td>
+                          <td><button className="deleteBtn"  onClick={() => deleteProduct(product._id)}>delete</button></td>
                          </tr>
                         </tbody>
                       </table>

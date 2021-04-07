@@ -1,10 +1,9 @@
 form {
     width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    height: 333px;
     box-shadow: 5px 10px 18px #888888;
+    padding: 45px 35px;
+    margin: 11px 0;
 }
 
 

@@ -20,8 +20,9 @@ const Admin = () => {
   return (
    <div className="manageproductInner">
         <Router>
-              <Row>
-                <div className="col-md-2">
+             <Container>
+             <Row>
+                <div className="col-md-2 mainmenu2">
                   <h2 className="adminHeading">FRESH VALLY</h2>
                   <ul className='manageMenu'>
                     <li>
@@ -50,6 +51,7 @@ const Admin = () => {
                   </Switch>
                 </div>
               </Row>
+             </Container>
           </Router>
    </div>
   );

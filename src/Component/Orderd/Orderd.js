@@ -9,28 +9,36 @@ const Orderd = () => {
     const [ordered,setOrderd] = useState([])
     const [loggedInUser, setLogedInUser] = useContext(userContext)
     useEffect(()=>{
-        fetch(`http://localhost:5050/productjegulaod?email=${loggedInUser.email}`)
+        fetch(`http://localhost:5050/productemail?email=${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => setOrderd(data))
     },[])
-    console.log('ordered product',ordered);
+    const deleteOrderdProduct = (id)=>{
+        fetch(`http://localhost:5050/deleteOrderdProduct/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(result => {
+                    console.log("deleted successfully", result);
+                })
+      }
     return (
         <div>
             {
-                ordered.map(hey => 
+                ordered.map(product => 
                    <Container>
                      <Row>
                          <div className="col-md-6 offset-md-3 orderdCardMain">
                          <Card className="orderdCard">
                         <ListGroup variant="flush">
-                            <ListGroup.Item>email:{hey.email}</ListGroup.Item>
-                            <ListGroup.Item>Name:{hey.name}</ListGroup.Item>
-                            <ListGroup.Item>quantity: {hey.weight}</ListGroup.Item>
-                            <ListGroup.Item>Price: {hey.price}</ListGroup.Item>
-                            <ListGroup.Item>Date: {(new Date(hey.newDate).toDateString('dd/MM/yyyy'))}</ListGroup.Item>
+                            <ListGroup.Item>email:{product.email}</ListGroup.Item>
+                            <ListGroup.Item>Name:{product.name}</ListGroup.Item>
+                            <ListGroup.Item>quantity: {product.weight}</ListGroup.Item>
+                            <ListGroup.Item>Price: {product.price}</ListGroup.Item>
+                            <ListGroup.Item>Date: {(new Date(product.newDate).toDateString('dd/MM/yyyy'))}</ListGroup.Item>
                         </ListGroup>
                         </Card>
-                        <button>Delate</button>
+                        <button onClick={() => deleteOrderdProduct(product._id)}>delete</button>
                          </div>
                      </Row>
                    </Container>

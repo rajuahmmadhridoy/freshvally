@@ -19,7 +19,7 @@ const CheckOut = () => {
         name:name,
         image:imageURL,
         newDate
-
+        
     }
 
     const CheckOutOrderd = () =>{
