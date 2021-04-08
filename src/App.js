@@ -30,9 +30,9 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/orderd">
+        <PrivateRoute path="/orderd">
           <Orderd />
-        </Route>
+        </PrivateRoute>
         <Route path="/home">
           <Home />
         </Route>
@@ -43,9 +43,9 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/admin">
+        <PrivateRoute path="/admin">
           <Admin />
-        </Route>
+        </PrivateRoute>
         <Route path="*">
             <Nomatch />
           </Route>

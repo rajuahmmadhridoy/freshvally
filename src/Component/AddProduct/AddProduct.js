@@ -16,7 +16,7 @@ const AddProduct = () => {
              imageURL:imageURL
 
         }
-        const url = `http://localhost:5050/addProduct`
+        const url = `https://peaceful-lake-64650.herokuapp.com/addProduct`
         console.log(productData)
         fetch(url, {
             method:'POST',
