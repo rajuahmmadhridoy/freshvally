@@ -5,13 +5,13 @@ import './ManageProduct.css'
 const ManageProduct = () => {
     const [product, setProduct] = useState([]);
    useEffect(()=>{
-     fetch('https://peaceful-lake-64650.herokuapp.com/product')
+     fetch('https://freshvally.herokuapp.com/product')
      .then(res => res.json())
      .then(data => setProduct(data))
    },[])
   //  console.log('object', product[0]._id);
   const deleteProduct = (id)=>{
-    fetch(`https://peaceful-lake-64650.herokuapp.com/deleteProduct/${id}`, {
+    fetch(`https://freshvally.herokuapp.com/deleteProduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

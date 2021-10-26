@@ -9,12 +9,12 @@ const Orderd = () => {
     const [ordered,setOrderd] = useState([])
     const [loggedInUser, setLogedInUser] = useContext(userContext)
     useEffect(()=>{
-        fetch(`https://peaceful-lake-64650.herokuapp.com/productemail?email=${loggedInUser.email}`)
+        fetch(`https://freshvally.herokuapp.com/productemail?email=${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => setOrderd(data))
     },[])
     const deleteOrderdProduct = (id)=>{
-        fetch(`https://peaceful-lake-64650.herokuapp.com/deleteOrderdProduct/${id}`, {
+        fetch(`https://freshvally.herokuapp.com/deleteOrderdProduct/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

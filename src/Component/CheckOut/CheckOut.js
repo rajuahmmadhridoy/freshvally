@@ -24,7 +24,7 @@ const CheckOut = () => {
 
     const CheckOutOrderd = () =>{
         const orderd = {...newCheckOutProduct,email}
-        const url = `https://peaceful-lake-64650.herokuapp.com/orderdProduct?email=`+email;
+        const url = `https://freshvally.herokuapp.com/orderdProduct?email=`+email;
         fetch(url, {
             method:'POST',
             headers:{
@@ -37,7 +37,7 @@ const CheckOut = () => {
     
 
 
-const url = `https://peaceful-lake-64650.herokuapp.com/product/${key}`;
+const url = `https://freshvally.herokuapp.com/product/${key}`;
 useEffect(()=>{
     fetch(url)
     .then(res => res.json())
